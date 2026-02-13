@@ -1,6 +1,5 @@
-import { Card } from '@/components/ui/card';
+import CertCard from '@/components/CertCard';
 import { skills } from '@/lib/constants';
-import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -9,9 +8,7 @@ function Home() {
       <h1 className="mb-20 text-white text-2xl">Zertifikate</h1>
       <section className="grid grid-cols-2 gap-4">
         {skills.map((skill) => (
-          <Link to={`/${skill.path}`}>
-            <Card className='h-40 text-center break-after-all wrap-anywhere px-4 hover:bg-black/50 font-bold text-lg' key={skill.path}>{skill.title}</Card>
-          </Link>
+          <CertCard skill={skill} />
         ))}
       </section>
     </div>
